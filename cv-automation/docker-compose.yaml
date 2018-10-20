@@ -1,0 +1,25 @@
+---
+version: '3'
+services:
+  service:
+    image: docker.io/bobcrutchley/matt-cv-service:latest
+    build:
+      context: ../cv-service
+      dockerfile: Dockerfile
+    ports:
+    - "8080:8080"
+  client:
+    image: docker.io/bobcrutchley/matt-cv-client:latest
+    build:
+      context: ../cv-client
+      dockerfile: Dockerfile
+    ports:
+    - "3000:3000"
+    environment:
+    - BACKEND_HOST={change-me}
+  mongodb:
+    image: mongo
+    ports:
+    - "27017:27017"
+...
+

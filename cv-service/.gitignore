@@ -1,0 +1,11 @@
+/.metadata/
+target
+.idea
+build
+.mvn
+mvn*
+*.swp
+.settings
+.classpath
+.project
+

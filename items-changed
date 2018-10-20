@@ -1,0 +1,5 @@
+deleted:
+	IDE config files
+	maven binaries
+	other binaries lying about
+	test folder at root of project

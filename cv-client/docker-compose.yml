@@ -1,0 +1,21 @@
+version: '3'
+
+    
+services:
+  front:
+    build: './cv-front'
+    #image: qamattjohunt/springcv_front:firsttry
+    ports:
+     - "4010:3000"
+  back:
+    build: './cv-back'
+    #image: qamattjohunt/springcv_back:firsttry
+    ports:
+     - "4011:8080"
+  data:
+    image: "mongo:3.2-jessie"
+   # command: "--smallfiles"
+    #volumes:
+  #   - data/mongodb:/data/db
+    ports:
+     - "4012:27017"
