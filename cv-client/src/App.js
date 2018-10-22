@@ -21,7 +21,7 @@ import { BACKEND_URL } from './api-config';
 class App extends Component {
 state = {
 
-getTarget:`http://${BACKEND_URL}/`,
+getTarget:`${BACKEND_URL}/`,
 temp:1,
 firstState : "",
 lastState : "",
@@ -55,7 +55,7 @@ changeSocks:false
     var first = document.getElementById("firstName").value;
     var last = document.getElementById("lastName").value;
 
-    fetch(`http://${BACKEND_URL}/`+first+"/"+last, {
+    fetch(`${BACKEND_URL}/`+first+"/"+last, {
       method: 'POST',
       body: data,
     });
@@ -64,7 +64,7 @@ changeSocks:false
 
   handleGet(){
     var last = document.getElementById("lastName").value;
-    this.state.getTarget = `http://${BACKEND_URL}/`+last;
+    this.state.getTarget = `${BACKEND_URL}/`+last;
   }
 
   handleUpload(){

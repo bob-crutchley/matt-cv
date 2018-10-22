@@ -11,7 +11,7 @@ this.handleSubmit = this.handleSubmit.bind(this);
 
     state = {
 
-    target:`http://${BACKEND_URL}/`+this.props.firstName+"/"+this.props.lastName
+    target:`${BACKEND_URL}/`+this.props.firstName+"/"+this.props.lastName
 
     };
 

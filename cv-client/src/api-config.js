@@ -18,4 +18,4 @@
 
 
 
-export const BACKEND_URL = `http://35.242.137.151:4011/`;
+export const BACKEND_URL = `http://${process.env.REACT_APP_SERVICE_HOST}:8080`;

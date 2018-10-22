@@ -1,0 +1,4 @@
+REACT_APP_SERVICE_HOST="$(curl 'https://api.ipify.org?format=text')"
+
+echo REACT_APP_SERVICE_HOST=$REACT_APP_SERVICE_HOST > .env
+

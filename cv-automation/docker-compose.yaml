@@ -16,10 +16,10 @@ services:
     ports:
     - "3000:3000"
     environment:
-    - BACKEND_HOST={change-me}
+    - REACT_APP_SERVICE_HOST=${REACT_APP_SERVICE_HOST}
   mongodb:
     image: mongo
-    ports:
-    - "27017:27017"
+    #ports:
+    #- "27017:27017"
 ...
 

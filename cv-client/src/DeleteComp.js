@@ -6,7 +6,7 @@ import { BACKEND_URL } from './api-config';
 class DeleteComp extends React.Component {
 
     state = {
-        target:`http://${BACKEND_URL}/`+this.props.firstName+"/"+this.props.lastName,
+        target:`${BACKEND_URL}/`+this.props.firstName+"/"+this.props.lastName,
         temp:0
         };
 
