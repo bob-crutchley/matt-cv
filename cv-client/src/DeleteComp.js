@@ -8,7 +8,7 @@ import { Button } from 'react-bootstrap';
 class DeleteComp extends React.Component {
 
     state = {
-        target:`http://${BACKEND_URL}/`+this.props.firstName+"/"+this.props.lastName,
+        target:`${BACKEND_URL}/`+this.props.firstName+"/"+this.props.lastName,
         temp:0
         };
 

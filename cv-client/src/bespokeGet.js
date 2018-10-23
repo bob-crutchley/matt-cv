@@ -10,13 +10,13 @@ class BespokeGetComp extends React.Component {
 
     state = {
 
-        target:`http://${BACKEND_URL}/`
+        target:`${BACKEND_URL}/`
        
         };
 
     changeTarget = () => {
 
-var newTarget = `http://${BACKEND_URL}/`+this.props.name;
+var newTarget = `${BACKEND_URL}/`+this.props.name;
 
 this.setState({target:newTarget});
 
