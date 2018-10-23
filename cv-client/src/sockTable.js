@@ -25,34 +25,25 @@ class ExtraDataColumnFormatTable extends React.Component {
     constructor(props){
         super(props);
 
-        axios.get(`${BACKEND_URL}/getAllMeta`).then(response => {
+        axios.get(`http://${BACKEND_URL}/getAllMeta`).then(response => {
 	
             this.setState({messageMeta: response.data},() => {
 
-                axios.get(`${BACKEND_URL}/getAll`).then(response => {
+                axios.get(`http://${BACKEND_URL}/getAll`).then(response => {
         
                     this.setState({message: response.data},() => {
 
                         this.popWorkingList();
         
                     })
-        
             
                     })
 
             })
 
-            })
-    
-                    
+            })                
        
-
-            
     }
-
-   
-
-
 
 popWorkingList(){
 

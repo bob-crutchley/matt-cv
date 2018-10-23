@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import axios from 'axios';
 
-import { Container, Row, Col, Input, Button, Fa, Card, CardBody } from 'mdbreact';
+import { Container, Row, Col, Input, Fa, Card, CardBody } from 'mdbreact';
 
 
 //this line really mucks with the css for the whole frontend
@@ -17,11 +17,12 @@ import './App.css';
 import { BACKEND_URL } from './api-config';
 
 
+import { Button } from 'react-bootstrap';
 
 class App extends Component {
 state = {
 
-getTarget:`${BACKEND_URL}/`,
+getTarget:`http://${BACKEND_URL}/`,
 temp:1,
 firstState : "",
 lastState : "",
@@ -55,7 +56,7 @@ changeSocks:false
     var first = document.getElementById("firstName").value;
     var last = document.getElementById("lastName").value;
 
-    fetch(`${BACKEND_URL}/`+first+"/"+last, {
+    fetch(`http://${BACKEND_URL}/`+first+"/"+last, {
       method: 'POST',
       body: data,
     });
@@ -64,7 +65,7 @@ changeSocks:false
 
   handleGet(){
     var last = document.getElementById("lastName").value;
-    this.state.getTarget = `${BACKEND_URL}/`+last;
+    this.state.getTarget = `http://${BACKEND_URL}/`+last;
   }
 
   handleUpload(){
@@ -83,6 +84,13 @@ var oppDisplayAdd = !(this.state.displayAdd);
 
   }
 
+  clickLabel(){
+
+    document.getElementById("fileLabel").click();
+
+
+  }
+
   
   render() {
 
@@ -93,6 +101,8 @@ var oppDisplayAdd = !(this.state.displayAdd);
       <div className="App">
 
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"/>
+      
+
       
  <Container>
         <Row>
@@ -107,11 +117,16 @@ var oppDisplayAdd = !(this.state.displayAdd);
                   </div>
                   <div className="text-center py-4 mt-3">
                  <div id = "bespokeDiv">
-                  <input id = "bespoke" type="file" name="file" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                  <input id = "bespoke" type="file" name="file" accept="application/vnd.openxmlformats-officedocument.wordprocessingml.document" style={{color:'red',opacity:'0',position: 'absolute',width: '1px', height : '1px'}}/>
+
+        
+        <label id="fileLabel" for="bespoke" type = "button" style={{color:'red',opacity:'0',position: 'absolute',width: '1px', height : '1px'}}>!!Upload file!!</label>
+			
+        <Button bsStyle = "primary" type="button" onClick={this.clickLabel}>Select File</Button>
                  </div>
               
                   <br/>
-                    <Button color="cyan" type="submit" onClick = {this.handleUpload}>Upload</Button>
+                    <Button bsStyle = "primary" type="submit" onClick = {this.handleUpload}>Upload</Button>
                   </div>
                 </form>
               </CardBody>
@@ -121,7 +136,7 @@ var oppDisplayAdd = !(this.state.displayAdd);
       </Container>
 <br/>
 <i class="fas fa-angle-double-up"></i>
-      <button id = "dropdown" value = "Display Add CV" onClick = {this.changeAddVis}>Hide Dropdown</button>
+      <Button bsStyle = "primary" id = "dropdown" value = "Display Add CV" onClick = {this.changeAddVis}>Hide Dropdown</Button>
       <i class="fas fa-angle-double-up"></i>
      
 			<br/>
@@ -144,7 +159,7 @@ var oppDisplayAdd = !(this.state.displayAdd);
         
 <i class="fas fa-angle-double-down"></i>
 
-        <button id = "dropdown" value = "Display Add CV" onClick = {this.changeAddVis}>Display Add CV</button>
+        <Button id = "dropdown" bsStyle = "primary" value = "Display Add CV" onClick = {this.changeAddVis}>Display Add CV</Button>
         
 <i class="fas fa-angle-double-down"></i>
         <br/>
