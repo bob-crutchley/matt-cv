@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import { BACKEND_URL } from './api-config';
 
+import { Button } from 'react-bootstrap';
+
 class DeleteComp extends React.Component {
 
     state = {
@@ -24,7 +26,7 @@ class DeleteComp extends React.Component {
       return (
   
   <div>
-  <button  onClick={this.changeTarget}>Delete CV!</button>
+  <Button bsStyle="primary"  onClick={this.changeTarget}>Delete CV</Button>
   </div>);
   
     }else{

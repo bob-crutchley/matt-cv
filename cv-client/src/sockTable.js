@@ -36,23 +36,14 @@ class ExtraDataColumnFormatTable extends React.Component {
                         this.popWorkingList();
         
                     })
-        
             
                     })
 
             })
 
-            })
-    
-                    
+            })                
        
-
-            
     }
-
-   
-
-
 
 popWorkingList(){
 
